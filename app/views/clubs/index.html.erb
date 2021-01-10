@@ -1,0 +1,12 @@
+<h2>Clubs in Brisbane</h2>
+
+<div class="clubs-container">
+  <% @clubs.each do |club| %>
+    <div class="club-card">
+      <h4><%= club.name %></h4>
+      <p><%= club.about %></p>
+    </div>
+  <% end %>
+</div>
+
+<button>Find Clubs Near Me</button>

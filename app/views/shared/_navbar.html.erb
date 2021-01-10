@@ -27,6 +27,18 @@
         </li>
       <% else %>
         <li class="nav-item">
+          <a href="/" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="/clubs" class="nav-link">Clubs</a>
+        </li>
+        <li class="nav-item">
+          <a href="/locations" class="nav-link">Locations</a>
+        </li>
+        <li class="nav-item">
+          <a href="/links" class="nav-link">Links</a>
+        </li>
+        <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
