@@ -1,1 +1,35 @@
 // Specific CSS for your home-page
+#pages-home {
+  background-image: url('swaraj-tiwari-Z707kEbOICs-unsplash.jpg');
+  background-size: cover;
+  h1 {
+    font-family: $landing-txt;
+    font-size: 16vw;
+    color: $white;
+    transform: rotate(-10deg);
+    margin: 35vh 14vw;
+  }
+  .homepage-txt-outline {
+    display: block;
+    color: #ffffff00;
+    -webkit-text-stroke: 2px white;
+    transform: translateX(-40px);
+  }
+  a {
+    bottom: 2%;
+    img {
+      height: 60px;
+    }
+  }
+}
+.homepage-red {
+  border-bottom: 250px solid $red-trans;
+  border-right: 130vw solid transparent;
+  bottom: 0;
+}
+.homepage-purple {
+  border-bottom: 170px solid $purple-trans;
+  border-left: 110vw solid transparent;
+  bottom: 0;
+  right: 0;
+}

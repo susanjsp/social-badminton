@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_08_040413) do
+ActiveRecord::Schema.define(version: 2021_01_12_002148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,10 @@ ActiveRecord::Schema.define(version: 2021_01_08_040413) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "about"
+    t.string "website"
+    t.string "facebook"
+    t.bigint "homebase_id"
+    t.index ["homebase_id"], name: "index_clubs_on_homebase_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -30,17 +34,30 @@ ActiveRecord::Schema.define(version: 2021_01_08_040413) do
     t.datetime "updated_at", precision: 6, null: false
     t.float "latitude"
     t.float "longitude"
+    t.string "website"
+  end
+
+  create_table "occurrences", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.bigint "session_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["session_id"], name: "index_occurrences_on_session_id"
   end
 
   create_table "sessions", force: :cascade do |t|
     t.bigint "club_id", null: false
     t.bigint "location_id", null: false
-    t.datetime "start_time"
-    t.datetime "end_time"
     t.boolean "membership"
     t.boolean "beginners"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "member_price"
+    t.integer "non_member_price"
+    t.datetime "first_event"
+    t.text "schedule"
+    t.integer "duration_mins"
     t.index ["club_id"], name: "index_sessions_on_club_id"
     t.index ["location_id"], name: "index_sessions_on_location_id"
   end
@@ -61,6 +78,8 @@ ActiveRecord::Schema.define(version: 2021_01_08_040413) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "clubs", "locations", column: "homebase_id"
+  add_foreign_key "occurrences", "sessions"
   add_foreign_key "sessions", "clubs"
   add_foreign_key "sessions", "locations"
   add_foreign_key "users", "clubs"

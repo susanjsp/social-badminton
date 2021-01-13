@@ -1,0 +1,21 @@
+<h2>Weekly Sessions in Brisbane</h2>
+<p>All times are shown in Brisbane Time: (+10:00 GMT)</p>
+
+<button>Weekly view</button>
+<button>Monthly view</button>
+
+<div class="calendar-month">
+  <%= month_calendar events: @occurrences do |date, events| %>
+    <%= date.day %>
+
+    <% events.each do |e| %>
+      <div>
+        <h6><%= e.session.club.name %></h6>
+        <p><%= e.start_time.strftime("%l:%M %p") %> - <%= e.end_time.strftime("%l:%M %p") %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<!--
+
+

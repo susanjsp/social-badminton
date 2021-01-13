@@ -1,0 +1,8 @@
+<%= simple_form_for @session do |f| %>
+  <%= f.label :start_time %>
+  <%= f.datetime_select :start_time %>
+  <%= f.label :start_time %>
+  <%= f.datetime_select :end_time %>
+  <%= f.label :recurring %>
+  <%= f.select_recurring :recurring, nil, allow_blank: true %>
+<% end %>

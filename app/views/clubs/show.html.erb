@@ -1,11 +1,27 @@
 <h2> <%= @club.name %> </h2>
 <p> <%= @club.about %> </p>
 
-<h3>Manager: <%= @club.user.name %></h3>
-<p>Contact no: <%= @club.user.phone %></p>
-<p>Email: <%= @club.user.email %></p>
+<% @club.users.each do |manager| %>
+  <h3>Manager: <%= manager.name %></h3>
+  <p>Contact no: <%= manager.phone %></p>
+  <p>Email: <%= manager.email %></p>
+<% end %>
 
 <h3>Weekly Sessions</h3>
 <%# Weekly sessions available %>
-
-<%# Usual location of sessions %>
+<% @club.sessions.each do |session| %>
+  <h4><%= session.start_time.strftime("%A %-d/%m/%Y")%></h4>
+  <h4><%= session.start_time.strftime("%l:%M %p")%> - <%= session.end_time.strftime("%l:%M %p") %></h4>
+  <h5><%= session.location.name %></h5>
+  <h5><%= session.location.address %></h5>
+  <%if session.membership %>
+    <p>Membership Required!!</p>
+  <% else %>
+    <p>Membership Not Required.</p>
+  <% end %>
+  <%if session.beginners %>
+    <p>Beginner friendly :)</p>
+  <% else %>
+    <p>No Beginners</p>
+  <% end %>
+<% end %>

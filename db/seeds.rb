@@ -5,114 +5,136 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "1. Creating clubs..."
-club1 = Club.create!(
-  name: "Sky Badminton",
-  about: "Come and join Logan's number 1 social scene"
-)
-club2 = Club.create!(
-  name: "Dragon Badminton",
-  about: "Brisbane's oldest social badminton club. Welcome to players of all levels, including absolute beginners!"
-)
-club3 = Club.create!(
-  name: "Jindalee Badminton",
-  about: "Meh"
-)
-puts "Finished creating #{Club.count} clubs..."
+#   Time.strptime('5/1/2021 21:00', '%d/%m/%Y %H:%M')
 
-puts "2. Creating users..."
-user1 = User.create!(
-  name: "Peter Pan",
-  email: "peter@qld.social",
-  password: "peterpan",
-  phone: "12345678",
-  club: club1
-)
-user2 = User.create!(
-  name: "Kevin Nguyen",
-  email: "kevin@qld.social",
-  password: "kevinnguyen",
-  phone: "01234567",
-  club: club2
-)
-user3 = User.create!(
-  name: "Liz Love",
-  email: "liz@qld.social",
-  password: "lizlove",
-  phone: "23456789",
-  club: club3
-)
-puts "Finished creating #{User.count} users..."
-
-
-# Add coords later?
-puts "3. Creating locations..."
-local1 = Location.create!(
-  name: "Sky Badminton",
-  address: "118/116 Wembley Rd, Logan Central QLD 4114",
-  features: { free_parking: true, onsite_parking: true, atm: false },
-)
-local2 = Location.create!(
-  name: "Dragon Badminton",
-  address: "Somerville House, 4 Stephens Rd, South Brisbane QLD 4101",
+puts "1a. Creating Chandler Badminton Club, location & sessions..."
+sleeman = Location.create!(
+  name: 'Sleeman Sports Complex',
+  address: '1763 Old Cleveland Road, Chandler QLD 4155',
   features: { free_parking: false, onsite_parking: true, atm: true },
+  website: 'https://www.sleemansports.com.au/'
 )
-local3 = Location.create!(
-  name: "Logan Badminton & Court Hire",
-  address: "2 Alfred St, Slacks Creek QLD 4127",
-  features: { free_parking: true, onsite_parking: false, atm: false },
+chandler = Club.create!(
+  name: 'Chandler Badminton Club',
+  about: 'A club for intermediate - advanced badminton players',
+  facebook: 'https://www.facebook.com/chandlerbadminton/',
+  homebase: sleeman
 )
-puts "Finished creating #{Location.count} locations..."
+chandler1 = Session.create!(
+  club: chandler,
+  location: sleeman,
+  first_event: DateTime.new(2021,1,5,9,30, 0, "+10:00"),
+  membership: false,
+  beginners: false,
+  duration_mins: 120
+)
+chandler1.new_schedule(1, 2)
+chandler1.save!
 
-puts "4. Creating sessions..."
-session1 = Session.create!(
-  club: club1,
-  location: local1,
-  start_time: DateTime.new(2021, 1, 5, 18, 25, 0),
-  end_time: DateTime.new(2021, 1, 5, 21, 0, 0),
-  membership: false,
-  beginners: true
-)
-session2 = Session.create!(
-  club: club1,
-  location: local1,
-  start_time: DateTime.new(2021, 1, 7, 18, 25, 0),
-  end_time: DateTime.new(2021, 1, 7, 21, 0, 0),
-  membership: false,
-  beginners: true
-)
-session3 = Session.create!(
-  club: club2,
-  location: local2,
-  start_time: DateTime.new(2021, 1, 6, 19, 30, 0),
-  end_time: DateTime.new(2021, 1, 6, 22, 55, 0),
-  membership: true,
-  beginners: true
-)
-session4 = Session.create!(
-  club: club2,
-  location: local2,
-  start_time: DateTime.new(2021, 1, 9, 14, 00, 0),
-  end_time: DateTime.new(2021, 1, 9, 17, 30, 0),
-  membership: true,
-  beginners: false
-)
-session5 = Session.create!(
-  club: club3,
-  location: local3,
-  start_time: DateTime.new(2021, 1, 4, 17, 30, 0),
-  end_time: DateTime.new(2021, 1, 4, 20, 00, 0),
-  membership: false,
-  beginners: false
-)
-session6 = Session.create!(
-  club: club3,
-  location: local3,
-  start_time: DateTime.new(2021, 1, 5, 19, 30, 0),
-  end_time: DateTime.new(2021, 1, 5, 22, 00, 0),
-  membership: false,
-  beginners: true
-)
-puts "Finished creating #{Session.count} sessions..."
+puts "1b. Finished creating Chandler Badminton Club! :)"
 
-# Time.strptime('5/1/2021 21:00', '%d/%m/%Y %H:%M')
+puts "2a. Creating Dragon Badminton, location & sessions..."
+sams = Location.create!(
+  name: "Sam's Badminton Arena",
+  address: "137 Bage St Nundah QLD 4012",
+  features: { free_parking: true, onsite_parking: true, atm: true, eftpos: true, cash_only: false }
+)
+dragon = Club.create!(
+  name: 'Dragon Badminton Club',
+  about: 'Your all-in-one club. Located in Brisbane, we welcome anyone, any standard, locals or visitors passing-by.',
+  facebook: 'https://www.facebook.com/DragonBadmintonClub/',
+  website: 'https://www.dragonclub.org/',
+  homebase: sams
+)
+dragon1 = Session.create!(
+  club: dragon,
+  location: sams,
+  first_event: DateTime.new(2021, 1, 2, 14,0,0, "+10:00"),
+  membership: false,
+  beginners: true,
+  member_price: 10,
+  non_member_price: 13,
+  duration_mins: 150
+)
+dragon1.new_schedule(6)
+dragon1.save!
+puts "2b. Finished creating Dragon Badminton Club! :)"
+
+puts "3a. Creating Sky Badminton, location & sessions..."
+sky = Location.create!(
+  name: "Sky Badminton Centre",
+  address: "116 – 118 Wembley Road, Logan Central, QLD 4114",
+  features: { free_parking: true, onsite_parking: true, atm: false, eftpos: false, cash_only: true, court_hire: true },
+  website: 'https://skybadminton.com.au/'
+)
+skyc = Club.create!(
+  name: 'Sky Badminton Club',
+  about: 'Welcome to Sky Badminton Centre – the best badminton venue in Brisbane. Our state-of-the-art courts and facilities are well-equipped and meet international competition requirements.',
+  facebook: 'https://www.facebook.com/rosyhtang/',
+  website: 'https://skybadminton.com.au/',
+  homebase: sky
+)
+sky1 = Session.create!(
+  club: skyc,
+  location: sky,
+  first_event: DateTime.new(2021, 1, 5, 10,30,0, "+10:00"),
+  membership: false,
+  beginners: true,
+  member_price: 10,
+  non_member_price: 15,
+  duration_mins: 120
+)
+sky1.new_schedule(2,5)
+sky1.save!
+puts "3b. Finished creating Sky Badminton Club! :)"
+
+puts "4a. Creating Griffith Badminton, location & sessions..."
+griffith = Location.create!(
+  name: "Griffith University - Mt Gravatt Recreation Hall (M12) - Next to Aquatic & Fitness Centre",
+  address: "Sports Road, Mount Gravatt Queensland 4122, Australia",
+  features: { free_parking: true, onsite_parking: true, atm: false, eftpos: false, cash_only: true, court_hire: false },
+  website: 'https://www.griffith.edu.au/sport/sport-and-recreation/recreation-hall'
+)
+griffithc = Club.create!(
+  name: 'Griffith Badminton Association',
+  about: 'Griffith Badminton Association (GBA) is a registered Griffith University organization badminton club. Club players are a mix of ages and skills; from beginners to competitive levels.The Club welcome all players intrested in the Sport of Badminton.',
+  facebook: 'https://www.facebook.com/Griffith-Badminton-Association-172463013294/',
+  homebase: griffith
+)
+griffith1 = Session.create!(
+  club: griffithc,
+  location: griffith,
+  first_event: DateTime.new(2021, 1, 1, 20,00,0, "+10:00"),
+  membership: false,
+  beginners: true,
+  member_price: 5,
+  non_member_price: 8,
+  duration_mins: 120
+)
+griffith1.new_schedule(5)
+griffith1.save!
+griffith2 = Session.create!(
+  club: griffithc,
+  location: griffith,
+  first_event: DateTime.new(2021, 1, 2, 17,00,0, "+10:00"),
+  membership: false,
+  beginners: true,
+  member_price: 5,
+  non_member_price: 8,
+  duration_mins: 180
+)
+griffith2.new_schedule(6)
+griffith2.save!
+puts "4b. Finished creating Griffith Badminton Club! :)"
+
+# puts "Creating occurrences for calendar..."
+# Session.all.each do |session|
+#   session.schedule.next_occurrences(10).each do |occurrence|
+#     event = Occurrence.create!(
+#       start_time: occurrence.start_time,
+#       end_time: occurrence.end_time,
+#       session: session
+#     )
+#   end
+# end
+# puts "Finished creating #{Occurrence.count} occurrences"

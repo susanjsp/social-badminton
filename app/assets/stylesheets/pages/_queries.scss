@@ -1,0 +1,33 @@
+@media (min-width: 576px) {
+  /* HOME PAGE */
+  #pages-home {
+    h1 { font-size: 14vw;
+         margin: 30vh 22vw; }
+    .homepage-txt-outline { transform: translateX(-70px); }
+  }
+  .homepage-red {
+    border-bottom: 250px solid $red-trans;
+    border-right: 110vw solid transparent;
+  }
+  .homepage-purple {
+    border-bottom: 140px solid $purple-trans;
+    border-left: 80vw solid transparent;
+  }
+}
+@media (min-width: 768px) {
+  /* HOME PAGE */
+  #pages-home {
+    h1 { font-size: 12vw;
+         margin: 30vh 31vw; }
+    .homepage-txt-outline { -webkit-text-stroke-width: 3px;
+                          transform: translateX(-100px); }
+  }
+  .homepage-red {
+    border-bottom: 30vw solid $red-trans;
+    border-right: 110vw solid transparent;
+  }
+  .homepage-purple {
+    border-bottom: 20vw solid $purple-trans;
+    border-left: 70vw solid transparent;
+  }
+}
