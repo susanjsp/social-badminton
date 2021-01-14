@@ -16,3 +16,18 @@
 
 //= require recurring_select
 //= require jquery-mobile-rs
+
+* {
+  a {
+    color: white;
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+body {
+  background-color: $black;
+  font-family: $body-font !important;
+  min-width: 360px;
+}

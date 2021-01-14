@@ -1,0 +1,46 @@
+$card-p-offset: 1rem;
+$card-header-purple: 50px;
+
+.club-show-cards {
+  font-style: italic;
+  transform: translateY(-1rem);
+  position: sticky;
+  z-index: -1;
+  img {
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+}
+.club-show-card {
+  background-color: $white;
+  position: relative;
+  margin: 0px 0px 1rem 1rem;
+  padding: 1rem;
+  box-shadow: -10px 0px 0px $dk-red;
+  text-align: right;
+  display: flow-root;
+  /* Mapbox in maspbox components page */
+}
+.club-show-card-header {
+  background-color: $black;
+  display: inline-block;
+  box-shadow: $card-header-purple 0px $lt-purple;
+  color: $white;
+  h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    padding: 6px 14px;
+  }
+  &:hover {
+    width: 100%;
+  }
+}
+.club-show-card-content {
+  line-height: 1rem;
+  font-weight: bold;
+  padding-top: 0.8rem;
+  p {
+    margin: 4px 0px;
+  }
+}

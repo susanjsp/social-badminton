@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   resources :clubs, only: [:index, :show, :edit, :update]
   resources :sessions, only: [:index, :new]
+  resources :locations, only: [:index]
 end

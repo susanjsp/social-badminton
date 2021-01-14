@@ -1,36 +1,28 @@
-<h2>Clubs in Brisbane</h2>
-
-<h2>Find a Club Near You!</h2>
-<form>
-  <input type="text" placeholder="Enter Postcode"></input>
-</form>
-
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
-<h2>All Clubs</h2>
-<div class="clubs-container">
-  <% @clubs.each do |club| %>
-    <div class="club-card">
-      <!-- CLUB INFORMATION -->
-      <div class="club-info">
-        <h4><%= link_to club.name, club_path(club) %></h4>
-        <p><%= club.about %></p>
-        <a href="<%= club.facebook %>">Facebook</a>
-        <% if club.website %>
-          <a href="<%= club.website %>">Website</a>
-        <% end %>
+<div class="clubs-index" class="mt-5">
+  <div class="header-design">
+    <h2><span class="purple-header-txt">All</span> Clubs</h2>
+  </div>
+  <div class="clubs-container">
+    <% @clubs.each do |club| %>
+      <div class="club-card">
+        <!-- CLUB INFORMATION -->
+        <div class="club-info">
+          <h4><%= link_to club.name, club_path(club) %></h4>
+          <p><%= club.about %></p>
+          <a href="<%= club.facebook %>">Facebook</a>
+          <% if club.website %>
+            <a href="<%= club.website %>">Website</a>
+          <% end %>
+        </div>
+        <!-- CLUB HOMEBASE INFORMATION -->
+        <div class="location-info">
+          <h5>Home Location</h5>
+          <h5><%= club.homebase.name %></h5>
+          <p><%= club.homebase.address %></p>
+          <p><%= club.homebase.features %></p>
+          <p> links, google rating, etc</p>
+        </div>
       </div>
-      <!-- CLUB HOMEBASE INFORMATION -->
-      <div class="location-info">
-        <h5>Home Location</h5>
-        <h5><%= club.homebase.name %></h5>
-        <p><%= club.homebase.address %></p>
-        <p><%= club.homebase.features %></p>
-        <p> links, google rating, etc</p>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

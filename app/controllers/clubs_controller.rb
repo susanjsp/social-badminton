@@ -3,20 +3,13 @@ class ClubsController < ApplicationController
 
   def index
     @clubs = policy_scope(Club)
-
-    @locations = policy_scope(Location)
-    @markers = @locations.geocoded.map do |location|
-      {
-        lat: location.latitude,
-        lng: location.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { location: location})
-      }
-    end
   end
 
   def show
     @club = Club.find(params[:id])
     authorize @club
+
+    @marker = build_geojson
   end
 
   def edit
@@ -25,5 +18,15 @@ class ClubsController < ApplicationController
 
   def update
 
+  end
+
+  private
+
+  def build_geojson
+    {
+      lat: @club.homebase.latitude,
+      lng: @club.homebase.longitude,
+      infoWindow: render_to_string(partial: "info_window", locals: { location: @club.homebase})
+    }
   end
 end

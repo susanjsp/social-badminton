@@ -8,24 +8,33 @@ $green: #1EDD88;
 $gray: #0E0000;
 $light-gray: #F4F4F4;
 
+$black: #181818;
 $white: #ffffff;
 $purple-trans: #7207c9b6;
 $red-trans: #cb0000b0;
 
+$lt-purple: #8529ff;
+$br-purple: #7700ff;
 $dk-purple: #5d07a3;
-$lt-purple: #9e55ff;
+$lt-red: #f05656;
+$br-red: #cf0000;
 $dk-red: #961010;
-$lt-red: #c70303;
 
-.dk-purple {
-  background-color: $dk-purple;
-}
 .lt-purple {
   background-color: $lt-purple;
 }
-.dk-red {
-  background-color: $dk-red;
+.br-purple {
+  background-color: $br-purple;
+}
+.dk-purple {
+  background-color: $dk-purple;
 }
 .lt-red {
   background-color: $lt-red;
+}
+.br-red {
+  background-color: $br-red;
+}
+.dk-red {
+  background-color: $dk-red;
 }

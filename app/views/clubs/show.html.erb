@@ -1,27 +1,85 @@
-<h2> <%= @club.name %> </h2>
-<p> <%= @club.about %> </p>
+<div class="clubs-show my-5">
+  <div class="header-design">
+    <!-- Can't think of a better way to apply span on name... -->
+    <h2><span class="purple-header-txt"><%= @club.name.split(" Badminton")[0] %></span> Badminton Club</h2>
+  </div>
 
-<% @club.users.each do |manager| %>
-  <h3>Manager: <%= manager.name %></h3>
-  <p>Contact no: <%= manager.phone %></p>
-  <p>Email: <%= manager.email %></p>
-<% end %>
+    <!-- CLUB INFO SECTIONS-->
+  <div class="club-show-cards container">
+    <%= image_tag 'siora-photography-hVeOZslMjGA-unsplash-1.jpg' %>
 
-<h3>Weekly Sessions</h3>
-<%# Weekly sessions available %>
-<% @club.sessions.each do |session| %>
-  <h4><%= session.start_time.strftime("%A %-d/%m/%Y")%></h4>
-  <h4><%= session.start_time.strftime("%l:%M %p")%> - <%= session.end_time.strftime("%l:%M %p") %></h4>
-  <h5><%= session.location.name %></h5>
-  <h5><%= session.location.address %></h5>
-  <%if session.membership %>
-    <p>Membership Required!!</p>
-  <% else %>
-    <p>Membership Not Required.</p>
-  <% end %>
-  <%if session.beginners %>
-    <p>Beginner friendly :)</p>
-  <% else %>
-    <p>No Beginners</p>
-  <% end %>
-<% end %>
+    <!-- About Us -->
+    <div class="club-show-card pull-right">
+      <div class="club-show-card-header">
+        <h3>About us</h3>
+      </div>
+      <div class="club-show-card-content">
+        <p> <%= @club.about %> </p>
+      </div>
+    </div>
+
+    <!-- Weekly Sessions -->
+    <div class="club-show-card pull-right">
+      <div class="club-show-card-header">
+        <h3>Weekly Sessions</h3>
+      </div>
+      <div class="club-show-card-content">
+        <% @club.sessions.each do |session| %>
+          <p><span class="text-uppercase"><%= session.schedule.start_time.strftime("%A")%></span><%= session.schedule.start_time.strftime("%l:%M %p")%> -
+                <%= session.schedule.end_time.strftime("%l:%M %p") %> @
+                <%= session.location.name %></p>
+          <%if session.membership %>
+            <p>Membership Required!!</p>
+          <% else %>
+            <p>Membership Not Required.</p>
+          <% end %>
+          <%if session.beginners %>
+            <p>Beginner friendly :)</p>
+          <% else %>
+            <p>No Beginners</p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <!-- Where We Play -->
+    <div class="club-show-card pull-right">
+      <div id="map"
+           data-markers="<%= @marker.to_json %>"
+           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      <div class="club-show-card-header">
+        <h3>Where we play</h3>
+      </div>
+      <div class="club-show-card-content">
+        <p>Our club is based at <%= @club.homebase.name %></p>
+        <p><%= @club.homebase.address %></p>
+        <p><%= @club.homebase.features %></p>
+      </div>
+    </div>
+    <!-- Contact -->
+    <div class="club-show-card pull-right">
+      <div class="club-show-card-header">
+        <h3>Contact</h3>
+      </div>
+      <div class="club-show-card-content">
+        <p>Club Manager: Steve Chen</p>
+        <p>Contact No: 0000 000 000</p>
+        <p>Contact Email: xxxxx123@gmail.com</p>
+        <% @club.users.each do |manager| %>
+          <h3>Manager: <%= manager.name %></h3>
+          <p>Contact no: <%= manager.phone %></p>
+          <p>Email: <%= manager.email %></p>
+        <% end %>
+      </div>
+    </div>
+    <!-- Latest Updates -->
+    <div class="club-show-card pull-right">
+      <div class="club-show-card-header">
+        <h3>Latest Updates</h3>
+      </div>
+      <div class="club-show-card-content">
+        <p>Facebook latest updates...</p>
+      </div>
+    </div>
+  </div>
+</div>
