@@ -14,3 +14,11 @@
     transform: rotate(355deg) translateX(-10px);
   }
 }
+
+.btn-social-links {
+  background-color: black;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  font-family: $body-font;
+  display: inline-block;
+}
