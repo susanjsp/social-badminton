@@ -1,0 +1,52 @@
+/* CARDS FOR CLUBS#INDEX */
+.club-index-cards {
+  .club-index-card {
+    border-bottom: 0.5px solid $border-grey;
+  }
+  & > :last-child {
+    border-bottom: none;
+  }
+  h3 {
+    font-size: 1rem;
+    text-align: left;
+  }
+  img {
+    width: 75px;
+    height: 75px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-right: 1.5rem;
+  }
+}
+
+/* CARDS FOR CLUBS#SHOW */
+$card-p-offset: 1rem;
+$card-header-purple: 50px;
+
+.container {
+  border-radius: 40px 40px 0px 0px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  hr {
+    border-top: 0.5px solid $border-grey;
+  }
+}
+.club-show-card {
+
+  /* Mapbox in maspbox components page */
+}
+.club-show-card-header {
+
+  h3 {
+
+  }
+  &:hover {
+
+  }
+}
+.club-show-card-content {
+
+  p {
+
+  }
+}
+

@@ -1,11 +1,76 @@
-<h2> <%= @club.name %> </h2>
-<p> <%= @club.about %> </p>
+<div class="clubs-show my-5">
+  <!-- Can't think of a better way to apply span on name... -->
+  <div class="clubs-header" style="background-image: url('<%= image_url 'siora-photography-hVeOZslMjGA-unsplash-1.jpg'%>')">
+    <h1><span class="blue-header-txt"><%= @club.name.split(" Badminton")[0] %></span> Badminton Club</h1>
 
-<h3>Manager: <%= @club.user.name %></h3>
-<p>Contact no: <%= @club.user.phone %></p>
-<p>Email: <%= @club.user.email %></p>
+    <div class="clubs-header-links d-flex justify-content-center my-5">
+      <% if @club.website %>
+        <%= link_to "website", @club.website, class: "btn-header-links" %>
+      <% end %>
+      <% if @club.facebook %>
+        <%= link_to "Facebook", @club.facebook, class: "btn-header-links" %>
+      <% end %>
+    </div>
+  </div>
 
-<h3>Weekly Sessions</h3>
-<%# Weekly sessions available %>
+  <!-- CLUB INFO SECTIONS-->
+  <div class="club-show-cards container p-3 my-3">
 
-<%# Usual location of sessions %>
+    <!-- About Us -->
+    <h3>About us</h3>
+    <p> <%= @club.about %> </p>
+    <hr>
+    <!-- Weekly Sessions -->
+    <h3>Weekly Sessions</h3>
+    <% @club.sessions.each do |session| %>
+      <p><span class="text-uppercase"><%= session.schedule.start_time.strftime("%A")%></span><%= session.schedule.start_time.strftime("%l:%M %p")%> -
+            <%= session.schedule.end_time.strftime("%l:%M %p") %> @
+            <%= session.location.name %></p>
+      <%if session.membership %>
+        <p>Membership Required!!</p>
+      <% else %>
+        <p>Membership Not Required.</p>
+      <% end %>
+      <%if session.beginners %>
+        <p>Beginner friendly :)</p>
+      <% else %>
+        <p>No Beginners</p>
+      <% end %>
+    <% end %>
+    <hr>
+    <!-- Where We Play -->
+    <div id="map"
+         data-markers="<%= @marker.to_json %>"
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+    <div class="club-show-card-header">
+      <h3>Where we play</h3>
+    </div>
+    <div class="club-show-card-content">
+      <p>Our club is based at <%= @club.homebase.name %></p>
+      <p><%= @club.homebase.address %></p>
+      <% @club.homebase.features.each do |feature, bool|%>
+      <% end %>
+        <p><i class="fas fa-parking fa-lg"></i> Free on-site Parking</p>
+        <p><i class="far fa-credit-card fa-lg"></i> Eftpos available</p>
+        <p><i class="fas fa-money-bill-wave fa-lg"></i> Cash available</p>
+    </div>
+    <hr>
+    <!-- Contact -->
+    <h3>Contact</h3>
+
+    <p>Club Manager: Steve Chen</p>
+    <p>Contact No: 0000 000 000</p>
+    <p>Contact Email: xxxxx123@gmail.com</p>
+    <% @club.users.each do |manager| %>
+      <h3>Manager: <%= manager.name %></h3>
+      <p>Contact no: <%= manager.phone %></p>
+      <p>Email: <%= manager.email %></p>
+    <% end %>
+    <hr>
+    <!-- Latest Updates -->
+    <h3>Latest Updates</h3>
+    <p>Facebook latest updates...</p>
+
+  </div>
+</div>

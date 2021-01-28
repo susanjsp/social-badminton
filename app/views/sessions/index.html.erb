@@ -1,0 +1,40 @@
+<div id="sessions-index" class="my-5">
+  <div class="header-design">
+    <h1><span class="blue-header-txt">Weekly</span> sessions</h1>
+    <div class="header-buttons d-flex justify-content-center my-5">
+      <button class="mr-3">Weekly view</button>
+      <button>Monthly view</button>
+    </div>
+  </div>
+
+  <div class="sessions-container container justify-content-center p-3 my-3">
+    <!-- Weekly Calendar -->
+    <div class="calendar-week">
+      <%= week_calendar events: @occurrences do |date, events| %>
+        <h3><%= date.strftime("%A %d/%m/%y") %></h3>
+
+        <% events.each do |e| %>
+          <ul>
+            <li><%= e.session.club.name %>
+            <%= e.start_time.strftime("%l:%M %p") %> - <%= e.end_time.strftime("%l:%M %p") %></li>
+          </ul>
+        <% end %>
+      <% end %>
+    </div>
+
+    <!-- Monthly Calendar -->
+    <div class="calendar-month simple-calendar d-none">
+      <%= month_calendar events: @occurrences do |date, events| %>
+        <%= date.day %>
+
+        <% events.each do |e| %>
+          <div>
+            <h6><%= e.session.club.name %></h6>
+            <p><%= e.start_time.strftime("%l:%M %p") %> - <%= e.end_time.strftime("%l:%M %p") %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

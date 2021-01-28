@@ -1,0 +1,24 @@
+<div id="clubs-index" class="my-5">
+  <div class="header-design">
+    <h2><span class="purple-header-txt">All</span> Clubs</h2>
+  </div>
+  <div class="club-index-cards container my-5">
+    <% @clubs.each do |club| %>
+      <div class="club-index-card">
+        <!-- CLUB INFORMATION -->
+        <%= image_tag 'siora-photography-hVeOZslMjGA-unsplash-1.jpg' %>
+        <h3><%= link_to club.name, club_path(club) %></h3>
+        <div class="club-index-links">
+          <%= link_to club.facebook do %>
+            <i class="fab fa-facebook-square fa-lg"></i>
+          <% end %>
+          <% if club.website %>
+            <%= link_to club.website do %>
+              <i class="fas fa-external-link-alt fa-lg"></i>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

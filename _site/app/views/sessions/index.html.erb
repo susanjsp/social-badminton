@@ -1,0 +1,41 @@
+
+<div id="sessions-index" class="my-5">
+  <div class="header-design">
+    <h2><span class="purple-header-txt">Weekly</span> sessions</h2>
+  </div>
+  <div class="sessions-container container"
+    <p>All times are shown in Brisbane Time: (+10:00 GMT)</p>
+
+    <button>Weekly view</button>
+    <button>Monthly view</button>
+
+    <!-- Weekly Calendar -->
+    <div class="calendar-week">
+      <%= week_calendar events: @occurrences do |date, events| %>
+        <%= date.day %>
+
+        <% events.each do |e| %>
+          <div>
+            <h6><%= e.session.club.name %></h6>
+            <p><%= e.start_time.strftime("%l:%M %p") %> - <%= e.end_time.strftime("%l:%M %p") %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <!-- Monthly Calendar -->
+    <div class="calendar-month simple-calendar">
+      <%= month_calendar events: @occurrences do |date, events| %>
+        <%= date.day %>
+
+        <% events.each do |e| %>
+          <div>
+            <h6><%= e.session.club.name %></h6>
+            <p><%= e.start_time.strftime("%l:%M %p") %> - <%= e.end_time.strftime("%l:%M %p") %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

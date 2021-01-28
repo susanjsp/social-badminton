@@ -1,5 +1,4 @@
 // Define variables for your color scheme
-
 // For example:
 $red: #FD1015;
 $blue: #167FFB;
@@ -8,3 +7,49 @@ $orange: #E67E22;
 $green: #1EDD88;
 $gray: #0E0000;
 $light-gray: #F4F4F4;
+
+$black: #181818;
+$white: #ffffff;
+
+$screen-bkg: #333;
+
+$decor-aqua: #0affcada;
+$decor-blue: #43d9ffd0;
+
+$border-grey: #6e6e6eab;
+$body-header-color: #dfdfdf;
+$body-txt-color: #a3a3a3;
+
+$lt-purple: #8529ff;
+$br-purple: #7700ff;
+$dk-purple: #5d07a3;
+$lt-red: #f05656;
+$br-red: #cf0000;
+$dk-red: #961010;
+
+.lt-purple {
+  background-color: $lt-purple;
+}
+.br-purple {
+  background-color: $br-purple;
+}
+.dk-purple {
+  background-color: $dk-purple;
+}
+.lt-red {
+  background-color: $lt-red;
+}
+.br-red {
+  background-color: $br-red;
+}
+.dk-red {
+  background-color: $dk-red;
+}
+
+.green{
+  color: #00ce56;
+  -webkit-text-stroke: 1px black;
+}
+.grey {
+  color: #a0a0a0;
+}

@@ -1,12 +1,12 @@
-<h2>Clubs in Brisbane</h2>
-
-<div class="clubs-container">
-  <% @clubs.each do |club| %>
-    <div class="club-card">
-      <h4><%= club.name %></h4>
-      <p><%= club.about %></p>
-    </div>
-  <% end %>
+<div id="clubs-index" class="my-5">
+  <h1><span class="blue-header-txt">All</span> Clubs</h1>
+  <div class="club-index-cards container my-5">
+    <% @clubs.each do |club| %>
+      <div class="club-index-card d-flex justify-center-between p-3">
+        <!-- CLUB INFORMATION -->
+        <%= image_tag 'siora-photography-hVeOZslMjGA-unsplash-1.jpg' %>
+        <h3><%= link_to club.name, club_path(club) %></h3>
+      </div>
+    <% end %>
+  </div>
 </div>
-
-<button>Find Clubs Near Me</button>
