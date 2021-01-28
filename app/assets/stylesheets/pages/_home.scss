@@ -2,6 +2,7 @@
 #pages-home {
   background-image: url('swaraj-tiwari-Z707kEbOICs-unsplash.jpg');
   background-size: cover;
+  overflow: hidden;
   h1 {
     font-family: $landing-txt;
     font-size: 16vw;
@@ -23,12 +24,12 @@
   }
 }
 .homepage-red {
-  border-bottom: 250px solid $red-trans;
+  border-bottom: 250px solid $decor-blue;
   border-right: 130vw solid transparent;
   bottom: 0;
 }
 .homepage-purple {
-  border-bottom: 170px solid $purple-trans;
+  border-bottom: 170px solid $decor-aqua;
   border-left: 110vw solid transparent;
   bottom: 0;
   right: 0;

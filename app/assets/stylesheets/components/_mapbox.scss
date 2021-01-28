@@ -1,7 +1,12 @@
 #locations-index {
   #map {
   width: 100%;
-  height: 600px;
+  height: 75vh;
+  border-radius: 16px;
+  }
+  a {
+    display: grid;
+    place-items: center;
   }
 }
 .club-show-card {
@@ -10,11 +15,6 @@
     float: left;
     width: 45%;
   }
-}
-.map-lg {
-  position: relative;
-  top: -55px;
-  z-index: 1;
 }
 
 // mapbox-lg - can't click on markers if z-index: -1 :(

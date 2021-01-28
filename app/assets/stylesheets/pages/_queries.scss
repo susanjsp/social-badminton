@@ -6,11 +6,11 @@
     .homepage-txt-outline { transform: translateX(-70px); }
   }
   .homepage-red {
-    border-bottom: 250px solid $red-trans;
+    border-bottom: 250px solid $decor-blue;
     border-right: 110vw solid transparent;
   }
   .homepage-purple {
-    border-bottom: 140px solid $purple-trans;
+    border-bottom: 140px solid $decor-aqua;
     border-left: 80vw solid transparent;
   }
 }
@@ -23,11 +23,11 @@
                           transform: translateX(-100px); }
   }
   .homepage-red {
-    border-bottom: 30vw solid $red-trans;
+    border-bottom: 30vw solid $decor-blue;
     border-right: 110vw solid transparent;
   }
   .homepage-purple {
-    border-bottom: 20vw solid $purple-trans;
+    border-bottom: 20vw solid $decor-aqua;
     border-left: 70vw solid transparent;
   }
 }

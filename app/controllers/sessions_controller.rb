@@ -28,3 +28,5 @@ class SessionsController < ApplicationController
     end
   end
 end
+
+# If Occurrence is from xxx club, make background color blue

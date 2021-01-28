@@ -1,39 +1,27 @@
 $header-angle: skew(350deg) rotate(354deg);
 h2, h3, .txt-outline {
-  text-transform: uppercase;
-  font-family: $headers-font;
   font-weight: 800;
-  text-align: center;
+  color: $body-header-color;
+  font-family: $body-font;
 }
-h2 {
+h1 {
+  text-transform: uppercase;
   -webkit-text-stroke: 2px $white;
   color: transparent;
   font-size: 3rem;
-  background-color: black;
-  padding: 8px 0px;
-  position: relative;
+  font-weight: 600;
+  text-align: center;
 }
-.purple-header-txt {
+.blue-header-txt {
   -webkit-text-stroke: 0px;
-  color: $br-purple;
+  color: $decor-blue;
 }
-.header-design {
-  transform: $header-angle;
-  &::before,  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-  }
-  &::before {
-    background-color: $lt-red;
-    transform: rotate(356deg);
-  }
-  &::after {
-    background-color: $br-red;
-    transform: rotate(353deg);
-    z-index: -1;
-  }
+h3 {
+  font-size: 1.2rem;
+}
+h4, h5 {
+  font-family: $body-font;
+}
+h4 {
+  font-weight: 600;
 }

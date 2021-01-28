@@ -1,29 +1,29 @@
-<div id="navbar" class="fixed-bottom">
-  <ul class="nav-container d-flex p-0 m-0">
-    <li class="nav-item dk-purple">
-      <a href="/" class="nav-link"><i class="fas fa-home"></i></a>
+<nav class="fixed-top my-3">
+  <ul class="nav-container d-flex justify-content-around p-0 m-0">
+    <li class="nav-item">
+      <a href="/clubs" class="nav-link"><i class="fas fa-home"></i></a>
     </li>
-    <li class="nav-item lt-purple">
+    <li class="nav-item">
       <a href="/sessions" class="nav-link"><i class="far fa-calendar-alt"></i></a>
     </li>
-    <li class="nav-item lt-red">
-      <a href="/clubs" class="nav-link"><i class="fas fa-map-marker-alt"></i></a>
+    <li class="nav-item">
+      <a href="/locations" class="nav-link"><i class="fas fa-map-marker-alt"></i></a>
     </li>
-    <li class="nav-item dk-red">
+    <li class="nav-item">
       <a href="/links" class="nav-link"><i class="fas fa-link"></i></a>
     </li>
     <% if user_signed_in? %>
-      <li class="nav-item dk-purple">
+      <li class="nav-item">
         <%= link_to destroy_user_session_path, method: :delete do %>
           <i class="fas fa-user-circle"></i>
         <% end %>
       </li>
     <% else %>
-      <li class="nav-item dk-purple">
+      <li class="nav-item">
         <%= link_to new_user_session_path, class: "nav-link" do %>
           <i class="fas fa-user-circle"></i>
         <% end %>
       </li>
     <% end %>
   </ul>
-</div>
+</nav>

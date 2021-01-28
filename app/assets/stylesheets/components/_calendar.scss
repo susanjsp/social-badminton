@@ -1,4 +1,48 @@
-.simple-calendar { background-color: white;}
+.simple-calendar {
+  font-family: $headers-font;
+  .calendar-heading {
+    display: inline;
+  }
+  .calendar-title {
+    font-family: $body-font;
+    font-weight: 300;
+    font-size: 1.2rem;
+  }
+  td {
+    border: none;
+    border-bottom: 0.2px solid $border-grey;
+  }
+  ul > li {
+    color: $body-txt-color;
+  }
+}
+.calendar-week {
+  thead { display: none; }
+  tr { display: grid; }
+  .day {
+    width: 100%;
+  }
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {}
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {}
+  .next-month { }
+  .current-month {}
+
+  .has-events {}
+}
 .calendar-month {
   .day {}
 
