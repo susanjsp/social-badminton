@@ -1,27 +1,66 @@
-$header-angle: skew(350deg) rotate(354deg);
-h2, h3, .txt-outline {
-  font-weight: 800;
-  color: $body-header-color;
+h2, h3, h4, .txt-outline {
+  color: $decor-blue;
   font-family: $body-font;
 }
 h1 {
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+}
+h1, h3 {
   text-transform: uppercase;
-  -webkit-text-stroke: 2px $white;
-  color: transparent;
   font-size: 3rem;
   font-weight: 600;
-  text-align: center;
 }
-.blue-header-txt {
+.blue-header-txt, h3 {
   -webkit-text-stroke: 0px;
-  color: $decor-blue;
+  color: $opaque-blue;
 }
-h3 {
+h3, h4 {
   font-size: 1.2rem;
 }
 h4, h5 {
   font-family: $body-font;
 }
 h4 {
-  font-weight: 600;
+  margin: 1rem 0px;
+}
+
+/* HEADER DIV PART */
+.header-title-div {
+  height: clamp(250px, 30vw, 350px);
+  display: grid;
+  place-items: center;
+  padding: 0px 10px;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  p { color: white; font-size: 1.2rem; }
+}
+#clubs-show {
+  padding-top: 5rem;
+  .header-title-div { height: 70vh; }
+  h1 { font-size: 2.5rem; }
+  img { height: 150px; width: 150px; }
+}
+.header-bkg-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+#clubs-index > .header-title-div {
+  background-image: url('https://res.cloudinary.com/susanjsp/image/upload/v1612075856/badminton-social/pexels-vladislav-vasnetsov-2202685_f1c4s2.jpg');
+}
+#sessions-index > .header-title-div {
+  background-image: url('https://res.cloudinary.com/susanjsp/image/upload/v1612075862/badminton-social/pexels-eric-anada-3660204_xk4n8d.jpg');
+  height: clamp(300px, 75vw, 500px);
+}
+#locations-index {
+  background-image: url('https://res.cloudinary.com/susanjsp/image/upload/v1611919362/badminton-social/muktasim-azlan-tkVwhG6yqKo-unsplash_b3ygtr.jpg');
+}
+#links-page > .header-title-div {
+  background-image: url('https://res.cloudinary.com/susanjsp/image/upload/v1612075857/badminton-social/pexels-bharath-5204828_eirv3f.jpg');
+}
+#login-page .header-title-div {
+  background-image: url('https://res.cloudinary.com/susanjsp/image/upload/v1612068226/badminton-social/pham-thu-thao-IV38bGT0Yjo-unsplash_lujuzk.jpg');
 }

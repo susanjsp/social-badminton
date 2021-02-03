@@ -1,24 +1,11 @@
-.btn-purple {
-  font-size: 2rem;
-  position: relative;
-  width: 45%;
-  &::before {
-    content: "";
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: #961010;
-    position: absolute;
-    z-index: -1;
-    transform: rotate(355deg) translateX(-10px);
-  }
-}
-
 .btn-header-links {
-  background-color: black;
+  background-color: $opaque-blue;
   padding: 8px 20px;
-  text-transform: uppercase;
   font-family: $body-font;
   display: inline-block;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.2rem;
 }

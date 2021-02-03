@@ -1,26 +1,46 @@
 .simple-calendar {
-  font-family: $headers-font;
+  font-family: $body-font;
   .calendar-heading {
-    display: inline;
+    text-align: center;
+    margin-bottom: 2rem;
+    a {
+      background-color: $opaque-blue;
+      padding: 5px 12px 7px 12px;
+      color: white;
+    }
   }
   .calendar-title {
     font-family: $body-font;
     font-weight: 300;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
+    background-color: white;
+    color: black;
+    padding: 8px 12px;
   }
-  td {
-    border: none;
-    border-bottom: 0.2px solid $border-grey;
+  table {
+    border-collapse: inherit;
+    color: $body-txt-color;
   }
   ul > li {
     color: $body-txt-color;
   }
+  h4 {
+    text-transform: uppercase;
+    color: $dark-blue;
+    font-weight: 600;
+  }
+  a { color: $dark-blue; }
+  th { color: $dark-blue; }
 }
 .calendar-week {
   thead { display: none; }
-  tr { display: grid; }
+  tr {
+    display: grid;
+  }
+  tr > :first-child {
+    border-top: none;
+  }
   .day {
-    width: 100%;
   }
 
   .wday-0 {}
@@ -44,6 +64,16 @@
   .has-events {}
 }
 .calendar-month {
+  thead { border: none; }
+  thead th {
+    border: none;
+    text-transform: uppercase;
+    padding: 0px;
+  }
+  td {
+    border: none;
+    padding: 0px;
+  }
   .day {}
 
   .wday-0 {}
@@ -66,3 +96,24 @@
 
   .has-events {}
 }
+.calendar-card {
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  padding: 1rem;
+}
+/* EVENT COLORS */
+.event-day {
+  padding: 4px 8px;
+  border-radius: 8px;
+  color: white;
+}
+.event-month {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.Chandler { background-color: $chandler; }
+.Dragon { background-color: $dragon; }
+.Sky { background-color: $sky; }
+.Griffith { background-color: $griffith; }
+.Sky { background-color: $sky; }

@@ -15,36 +15,13 @@ $screen-bkg: #333;
 
 $decor-aqua: #0affcada;
 $decor-blue: #43d9ffd0;
+$opaque-blue: #43d9ff;
+$opaque-aqua: #14f8c7;
+$dark-blue: #60b0f4;
 
 $border-grey: #6e6e6eab;
 $body-header-color: #dfdfdf;
-$body-txt-color: #a3a3a3;
-
-$lt-purple: #8529ff;
-$br-purple: #7700ff;
-$dk-purple: #5d07a3;
-$lt-red: #f05656;
-$br-red: #cf0000;
-$dk-red: #961010;
-
-.lt-purple {
-  background-color: $lt-purple;
-}
-.br-purple {
-  background-color: $br-purple;
-}
-.dk-purple {
-  background-color: $dk-purple;
-}
-.lt-red {
-  background-color: $lt-red;
-}
-.br-red {
-  background-color: $br-red;
-}
-.dk-red {
-  background-color: $dk-red;
-}
+$body-txt-color: #5f5f5f;
 
 .green{
   color: #00ce56;
@@ -53,3 +30,9 @@ $dk-red: #961010;
 .grey {
   color: #a0a0a0;
 }
+
+/* CALENDAR EVENT COLORS */
+$chandler: #9ae455fd;
+$dragon: #f7c966fd;
+$griffith: #fd6e6efd;
+$sky: #73e9d5fd;

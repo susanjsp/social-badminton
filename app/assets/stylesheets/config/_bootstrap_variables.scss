@@ -23,6 +23,12 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
-.fixed-bottom {
-  bottom: 20px !important;
+.nav-item {
+  text-transform: uppercase;
+  .nav-link a, .nav-link i { color: $dark-blue !important; }
+  i { margin-right: 1rem; }
 }
+.navbar-collapse { flex-grow: unset !important; }
+.navbar-light .navbar-nav .nav-link { color: unset; }
+.navbar-light .navbar-toggler { border: none; }
+.navbar-toggler-icon { color: $dark-blue; }
