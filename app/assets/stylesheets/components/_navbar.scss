@@ -1,17 +1,8 @@
-nav {
-  display: grid;
-  place-items: center;
-  .nav-container {
-    gap: 16px;
-  }
+.navbar {
+  padding: 0.5rem 1rem;
 }
-.nav-item {
-  list-style: none;
-  font-size: 1.3rem;
-  a {
-    color: $white;
-  }
-  .nav-link {
-    padding: 4px 8px;
+.navbar-brand {
+  img {
+    height: 60px;
   }
 }

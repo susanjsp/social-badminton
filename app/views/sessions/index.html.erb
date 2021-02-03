@@ -1,38 +1,46 @@
-<div id="sessions-index" class="my-5">
-  <div class="header-design">
-    <h1><span class="blue-header-txt">Weekly</span> sessions</h1>
-    <div class="header-buttons d-flex justify-content-center my-5">
-      <button class="mr-3">Weekly view</button>
-      <button>Monthly view</button>
+<div id="sessions-index">
+  <div class="header-title-div px-2 header-bkg-img">
+    <h1><span class="blue-header-txt">Regular</span> sessions</h1>
+    <p>This calendar is intended as a guide only, please contact the club through their facebook page to secure your spot for each session.</p>
+    <div class="header-buttons d-flex justify-content-center">
+      <button class="mr-3 btn-header-links">Show Week</button>
+      <button class="btn-header-links">Show Month</button>
     </div>
   </div>
 
-  <div class="sessions-container container justify-content-center p-3 my-3">
+  <div id="sessions-container" class="container justify-content-center py-3">
     <!-- Weekly Calendar -->
-    <div class="calendar-week">
+    <div class="calendar-week d-none">
       <%= week_calendar events: @occurrences do |date, events| %>
-        <h3><%= date.strftime("%A %d/%m/%y") %></h3>
+        <h4><%= date.strftime("%A %d/%m/%y") %></h4>
 
         <% events.each do |e| %>
-          <ul>
-            <li><%= e.session.club.name %>
-            <%= e.start_time.strftime("%l:%M %p") %> - <%= e.end_time.strftime("%l:%M %p") %></li>
-          </ul>
+          <p class="event-day <%= e.session.club.name.split(' ')[0] %>">
+          <%= e.start_time.strftime("%l:%M %p") %> - <%= e.end_time.strftime("%l:%M %p") %>
+          @ <%= e.session.club.name %></p>
         <% end %>
       <% end %>
     </div>
 
     <!-- Monthly Calendar -->
-    <div class="calendar-month simple-calendar d-none">
-      <%= month_calendar events: @occurrences do |date, events| %>
-        <%= date.day %>
-
-        <% events.each do |e| %>
-          <div>
-            <h6><%= e.session.club.name %></h6>
-            <p><%= e.start_time.strftime("%l:%M %p") %> - <%= e.end_time.strftime("%l:%M %p") %></p>
+    <div id="monthly-view">
+      <div class="calendar-month simple-calendar col-lg-9">
+        <%= month_calendar events: @occurrences do |date, events| %>
+          <%= date.day %>
+          <div class="d-flex align-items-end flex-wrap mt-3">
+            <% events.each do |e| %>
+              <div class="event-month mr-1 <%= e.session.club.name.split(' ')[0] %>"></div>
+            <% end %>
           </div>
         <% end %>
+      </div>
+
+      <%= calendar number_of_days: 1, events: @occurrences, class: 'col-lg-3' do |date, events| %>
+        <% events.each do |e| %>
+            <p class="event-day <%= e.session.club.name.split(' ')[0] %>">
+            <%= e.start_time.strftime("%l:%M %p") %> - <%= e.end_time.strftime("%l:%M %p") %>
+            @ <%= e.session.club.name %></p>
+          <% end %>
       <% end %>
     </div>
   </div>

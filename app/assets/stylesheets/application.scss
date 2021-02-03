@@ -19,16 +19,20 @@
 
 * {
   a {
-    color: white;
+    color: $dark-blue;
     &:hover {
-      color: white;
+      color: $opaque-blue;
       text-decoration: none;
     }
   }
 }
 body {
-  background-color: $screen-bkg;
   font-family: $body-font !important;
   color: $body-txt-color;
   min-width: 360px;
+  p {
+    color: $body-txt-color;
+    font-size: 0.9rem;
+  }
 }
+
