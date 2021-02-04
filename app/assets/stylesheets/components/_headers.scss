@@ -34,6 +34,7 @@ h4 {
   padding: 0px 10px;
   gap: 1rem;
   margin-bottom: 2rem;
+  width: 100%;
   p { color: white; font-size: 1.2rem; }
 }
 #clubs-show {
@@ -43,23 +44,26 @@ h4 {
   img { height: 150px; width: 150px; }
 }
 .header-bkg-img {
-  background-size: cover;
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-position: center;
 }
 #clubs-index > .header-title-div {
-  background-image: url('https://res.cloudinary.com/susanjsp/image/upload/v1612075856/badminton-social/pexels-vladislav-vasnetsov-2202685_f1c4s2.jpg');
+  background-image: url('https://res.cloudinary.com/susanjsp/image/upload/v1612480221/badminton-social/clubs-index_fjphgx.jpg');
 }
+
+#clubs-show { background-attachment: fixed; background-size: cover; }
 #sessions-index > .header-title-div {
-  background-image: url('https://res.cloudinary.com/susanjsp/image/upload/v1612075862/badminton-social/pexels-eric-anada-3660204_xk4n8d.jpg');
+  background-image: url('https://res.cloudinary.com/susanjsp/image/upload/v1612480385/badminton-social/sessions-index_lj9akd.jpg');
   height: clamp(300px, 75vw, 500px);
 }
 #locations-index {
-  background-image: url('https://res.cloudinary.com/susanjsp/image/upload/v1611919362/badminton-social/muktasim-azlan-tkVwhG6yqKo-unsplash_b3ygtr.jpg');
+  background-image: url('https://res.cloudinary.com/susanjsp/image/upload/v1612480235/badminton-social/locations-index_ytlrfv.jpg');
+  background-attachment: fixed;
+  background-size: cover;
 }
 #links-page > .header-title-div {
-  background-image: url('https://res.cloudinary.com/susanjsp/image/upload/v1612075857/badminton-social/pexels-bharath-5204828_eirv3f.jpg');
+  background-image: url('https://res.cloudinary.com/susanjsp/image/upload/v1612480225/badminton-social/links-page_zwipbf.jpg');
 }
 #login-page .header-title-div {
   background-image: url('https://res.cloudinary.com/susanjsp/image/upload/v1612068226/badminton-social/pham-thu-thao-IV38bGT0Yjo-unsplash_lujuzk.jpg');

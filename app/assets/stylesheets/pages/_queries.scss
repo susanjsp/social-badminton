@@ -8,11 +8,15 @@
     i { margin-right: 0.5rem; }
   }
   /* BUTTONS */
-.btn-header-links {
-  font-size: 1rem;
-  padding: 1rem 1.5rem;
-}
-  /* CLUBS#INDEX */
+  .btn-header-links {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+  }
+  /* HOME */
+  #pages-home {
+    background-image: url('https://res.cloudinary.com/susanjsp/image/upload/v1612480225/badminton-social/homepage-landscape_ptilch.jpg');
+  }
+    /* CLUBS#INDEX */
   .club-index-cards {
     gap: 0.8rem;
     .club-card {
