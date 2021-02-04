@@ -4,10 +4,6 @@
   height: 75vh;
   border-radius: 16px;
   }
-  a {
-    display: grid;
-    place-items: center;
-  }
 }
 .club-show-card {
   #map {
@@ -16,5 +12,9 @@
     width: 45%;
   }
 }
+.mapboxgl-map { font: unset; }
 
-// mapbox-lg - can't click on markers if z-index: -1 :(
+.mapboxgl-popup-content {
+  border-radius: 10px;
+  h5 { color: $dark-blue; }
+}

@@ -1,2 +1,3 @@
 <h5><%= location.name %></h5>
 <p><%= location.address %></p>
+<p><strong>Main club: </strong><%= link_to location.homeclub.name, club_path(location.homeclub.id), class: 'd-block' %> </p>
