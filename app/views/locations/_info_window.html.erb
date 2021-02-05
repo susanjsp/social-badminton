@@ -1,3 +1,12 @@
 <h5><%= location.name %></h5>
 <p><%= location.address %></p>
-<p><strong>Main club: </strong><%= link_to location.homeclub.name, club_path(location.homeclub.id), class: 'd-block' %> </p>
+<p>
+  <strong>Main club: </strong>
+  <% if location.homeclub %>
+    <%= link_to location.homeclub.name, club_path(location.homeclub), class: 'd-block' %>
+  <% else %>
+    <% location.clubs.each do |club| %>
+      <%= link_to club.name, club_path(club) %>
+    <% end %>
+  <% end %>
+</p>

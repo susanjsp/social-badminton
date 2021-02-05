@@ -6,7 +6,7 @@
     <% @clubs.each do |club| %>
       <div class="club-card d-flex justify-center-between mb-3">
         <!-- CLUB INFORMATION -->
-        <img class="mr-3" src="https://res.cloudinary.com/susanjsp/image/upload/v1612069905/badminton-social/dragon_club_gkzpog.jpg">
+        <img class="mr-3" src="<%= club.logo %>">
         <div>
           <h3><%= link_to club.name, club_path(club) %></h3>
           <p><%= club.homebase.address %></p>

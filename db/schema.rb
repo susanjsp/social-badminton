@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_12_002148) do
+ActiveRecord::Schema.define(version: 2021_02_05_004321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_01_12_002148) do
     t.string "website"
     t.string "facebook"
     t.bigint "homebase_id"
+    t.string "logo"
     t.index ["homebase_id"], name: "index_clubs_on_homebase_id"
   end
 
