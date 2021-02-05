@@ -17,19 +17,6 @@
       <li class="nav-item">
         <a href="/links" class="nav-link"><i class="fas fa-link"></i> Links</a>
       </li>
-      <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
-            <i class="fas fa-user-circle"></i> Sign out
-          <% end %>
-        </li>
-        <% else %>
-        <li class="nav-item">
-          <%= link_to new_user_session_path, class: "nav-link" do %>
-            <i class="fas fa-user-circle"></i> Sign in
-          <% end %>
-        </li>
-      <% end %>
     </ul>
   </div>
 </nav>
